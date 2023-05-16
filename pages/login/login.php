@@ -1,6 +1,6 @@
 <?php
 
-include 'connect.php';
+include '../../services/connect.php';
 
 if (isset($_POST['submit_button'])) {
     $username = $_POST['username'];
@@ -14,14 +14,14 @@ if (isset($_POST['submit_button'])) {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['ID'] = $row['ID'];
         echo  $_SESSION['ID'];
-        header('location:home.php');
+        header('location:../home/home.php');
     } else {
         echo "<script>alert('Username or Password does not exist');</script>";
     }
 }
 
 if(isset($_POST['register_button'])) {
-    header('location:register_user.php');
+    header('location:../user/register_user.php');
 }
 
 ?>

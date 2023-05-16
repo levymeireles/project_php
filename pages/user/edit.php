@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include '../../services/connect.php';
 if (isset($_POST['submit_button'])) {
     $name = $_POST['name'];
     $username = $_POST['username'];
@@ -17,7 +17,7 @@ if (isset($_POST['submit_button'])) {
     $query_update = "UPDATE USERS SET NAME = '$name', USERNAME = '$username', PASSWORD = '$password', CITY = '$city', GENDER = '$gender', IMAGE = '$image' WHERE ID = '$_SESSION[ID]'";
 
     mysqli_query($con, $query_update);
-    header('location:home.php');
+    header('location:../home/home.php');
 }
 
 $query_select = "SELECT * FROM USERS WHERE ID = '$_SESSION[ID]'";

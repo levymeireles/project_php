@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include '../../services/connect.php';
 ?>
 <a href="reg_city.php"> adicionar cidade </a>
 <table border='1'>

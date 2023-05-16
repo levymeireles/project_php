@@ -1,11 +1,14 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-include 'connect.php';
+include '../../services/connect.php';
+include 'checkLogin.php';
+
 if(isset($_POST['sub'])){
-    $nameCity=$_POST['nameCity'];
     
+    $nameCity=$_POST['nameCity'];
+
     // $i="insert into reg(name,username,password,city,image,gender)value('$t','$u','$p','$c','$img','$g')";
-    $i="insert into city (nameCity) values ('$nameCity')";
+    $i = "insert into city(nameCity) values ('$nameCity')";
     mysqli_query($con, $i);
 }
 ?>

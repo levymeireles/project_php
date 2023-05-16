@@ -1,6 +1,6 @@
 <?php
-include 'connect.php';
-include 'checkLogin.php';
+include '../../services/connect.php';
+include '../../services/checkLogin.php';
 
 $query = "SELECT * FROM USERS WHERE ID = $_SESSION[ID]";
 $res = mysqli_query($con, $query);
@@ -36,7 +36,7 @@ $res = mysqli_query($con, $query);
                     while ($row = mysqli_fetch_assoc($res)) {
                         echo "
                         <tr>
-                        <td  scope='row'> <img src=" . $row['IMAGE'] . "  width='100px' height='100px'></td>
+                        <td  scope='row'> <img src=../../" . $row['IMAGE'] . "  width='100px' height='100px'></td>
                         <td  scope='row'>" . $row['NAME'] . "</td>
                         <td  scope='row'>" . $row['USERNAME'] . "</td>
                         <td  scope='row'>" . $row['CITY'] . "</td>
@@ -53,10 +53,10 @@ $res = mysqli_query($con, $query);
     </div>
 
     <div>
-        <a href="edit.php">Edit</a>
-        <a href="delete.php">Delete</a>
-        <a href="logout.php">Logout</a> <br><br>
-        <a href="viewall_city.php">City</a>
+        <a href="../user/edit.php">Edit</a>
+        <a href="../user/delete.php">Delete</a>
+        <a href="../../services/logout.php">Logout</a> <br><br>
+        <a href="../city/viewall_city.php">City</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

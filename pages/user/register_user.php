@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-include 'connect.php';
+include '../../services/connect.php';
 if(isset($_POST['sub'])){
     $t=$_POST['text'];
     $u=$_POST['user'];
