@@ -10,7 +10,7 @@ if (isset($_POST['submit_button'])) {
     $gender = $_POST['gender'];
 
     if ($_FILES['file']['name']) {
-        move_uploaded_file($_FILES['file']['tmp_name'], "images/" . $_FILES['file']['name']);
+        move_uploaded_file($_FILES['file']['tmp_name'], "../../images/" . $_FILES['file']['name']);
         $image = "images/" . $_FILES['file']['name'];
     }
 
