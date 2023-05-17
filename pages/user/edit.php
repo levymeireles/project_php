@@ -1,5 +1,6 @@
 <?php
 include '../../services/connect.php';
+
 if (isset($_POST['submit_button'])) {
     $name = $_POST['name'];
     $username = $_POST['username'];
@@ -70,7 +71,7 @@ $row = mysqli_fetch_assoc($res);
                 ?>
                     <input type="radio" name="gender" id="gen" value="male">
                     <?php } ?>male
-                    <?php if ($row['gender'] == 'female') {
+                    <?php if ($row['GENDER'] == 'female') {
                     ?>
                         <input type="radio" name="gender" id="gen" value="female" checked>
                     <?php
@@ -83,7 +84,7 @@ $row = mysqli_fetch_assoc($res);
         <tr>
             <td>
                 Image
-                <img src="<?php echo $row['IMAGE'] ?>" width="100px" height="100px">
+                <img src="../../<?php echo $row['IMAGE'] ?>" width="100px" height="100px">
                 <input type="file" name="file"/>
                 <input type="hidden" name="image" value="<?php echo $row['IMAGE'] ?>"/>
             </td>

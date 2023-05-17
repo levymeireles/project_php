@@ -1,6 +1,8 @@
 <?php
 include '../../services/connect.php';
-$sq="delete from reg where id='$_SESSION[id]'";
-mysqli_query($con,$sq);
-header('location:add_district.php');
+
+$query = "DELETE FROM USERS WHERE ID = '$_SESSION[ID]'";
+mysqli_query($con, $query);
+
+header('location:../../services/logout.php');
 ?>
